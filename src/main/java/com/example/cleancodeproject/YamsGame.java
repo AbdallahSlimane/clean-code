@@ -33,7 +33,7 @@ public class YamsGame {
         return des[0] == des[1] && des[2] == des[4] || des[0] == des[2] && des[3] == des[4];
     }
 
-    public static boolean isGrandeSuite(int[] des) {
+    private static boolean isGrandeSuite(int[] des) {
         return Arrays.equals(des, new int[]{1, 2, 3, 4, 5}) || Arrays.equals(des, new int[]{2, 3, 4, 5, 6});
     }
 
