@@ -14,6 +14,7 @@ public class YamsGame {
         Arrays.sort(des);
 
         if (isYams(des)) return 50;
+        if (isGrandeSuite(des)) return 40;
         if (isCarre(des)) return 35;
         if (isFull(des)) return 30;
         if (isBrelan(des)) return 28;
@@ -28,12 +29,16 @@ public class YamsGame {
         return des[0] == des[3] || des[1] == des[4];
     }
 
-    private static boolean isYams(int[] des) {
-        return des[0] == des[4];
-    }
-
     private static boolean isFull(int[] des) {
         return des[0] == des[1] && des[2] == des[4] || des[0] == des[2] && des[3] == des[4];
+    }
+
+    public static boolean isGrandeSuite(int[] des) {
+        return Arrays.equals(des, new int[]{1, 2, 3, 4, 5}) || Arrays.equals(des, new int[]{2, 3, 4, 5, 6});
+    }
+
+    private static boolean isYams(int[] des) {
+        return des[0] == des[4];
     }
 
     private static int sommeDes(int[] des) {
